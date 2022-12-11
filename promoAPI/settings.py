@@ -38,7 +38,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
-    'Fornecedores.apps.FornecedoresConfig'
+    'rest_framework_swagger',
+    'Fornecedores.apps.FornecedoresConfig',
+    'Promocoes.apps.PromocoesConfig'
 ]
 
 MIDDLEWARE = [
