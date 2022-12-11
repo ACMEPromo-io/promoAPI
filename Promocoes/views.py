@@ -18,3 +18,8 @@ class PromocoesViewSet(viewsets.ModelViewSet):
             serializer.save()
             return JsonResponse(code=201, data=serializer.data)
         return JsonResponse(code=400, data="wrong parameters")
+
+    def delete(self, request, pk):
+        promocaoModel_object = self.get_object(pk)
+        promocaoModel_object.delete()
+        return JsonResponse(code=200, data='')
