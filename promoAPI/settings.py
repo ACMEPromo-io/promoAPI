@@ -41,7 +41,7 @@ INSTALLED_APPS = [
     'rest_framework_swagger',
     'Fornecedores.apps.FornecedoresConfig',
     'Promocoes.apps.PromocoesConfig',
-    'Aprovadores.apps.AprovadoresConfig'
+    'Aprovadores.apps.AprovadoresConfig',
     'Clientes.apps.ClientesConfig'
 ]
 
