@@ -42,7 +42,8 @@ INSTALLED_APPS = [
     'Fornecedores.apps.FornecedoresConfig',
     'Promocoes.apps.PromocoesConfig',
     'Aprovadores.apps.AprovadoresConfig',
-    'Clientes.apps.ClientesConfig'
+    'Clientes.apps.ClientesConfig',
+    'Aprovacoes.apps.AprovacoesConfig'
 ]
 
 MIDDLEWARE = [
