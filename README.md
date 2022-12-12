@@ -23,6 +23,8 @@
 
 Faça o download do repositório, abra um terminal dentro da pasta principal e rode os seguintes comandos:
 
+Opcionalmente, crie um ambiente virtual com: `python3 -m virtualenv venv && source venv/bin/activate`
+
 Instala dependências necessárias
 `pip install -r requirements.txt`
 
