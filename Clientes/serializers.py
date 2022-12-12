@@ -1,4 +1,4 @@
-from Clientes.models import Clientes, ClientePromocao, Cupom
+from Clientes.models import Clientes, ClientePromocao, Cupoms
 from rest_framework import serializers
 
 class ClientesSerializer(serializers.ModelSerializer):
@@ -11,7 +11,7 @@ class ClientesPromocaoSerializer(serializers.ModelSerializer):
         model = ClientePromocao
         fields = '__all__'
 
-class CupomSerializer(serializers.ModelSerializer):
+class CupomsSerializer(serializers.ModelSerializer):
     class Meta:
-        model = Cupom
+        model = Cupoms
         fields = '__all__'

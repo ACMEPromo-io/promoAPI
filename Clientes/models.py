@@ -13,7 +13,7 @@ class ClientePromocao(models.Model):
     idCliente = models.ForeignKey(Clientes, on_delete=models.DO_NOTHING)
     idPromocao = models.ForeignKey(Promocoes, on_delete=models.DO_NOTHING)
 
-class Cupom(models.Model):
+class Cupoms(models.Model):
 
     class Status(models.TextChoices):
         VALIDO = 'Valido', 
