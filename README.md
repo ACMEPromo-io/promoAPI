@@ -24,7 +24,7 @@
 Faça o download do repositório, abra um terminal dentro da pasta principal e rode os seguintes comandos:
 
 Instala dependências necessárias
-'''pip install -r requirements.txt'''
+`pip install -r requirements.txt`
 
 Inicia o servidor
 `python manage.py runserver`
