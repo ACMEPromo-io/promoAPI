@@ -40,7 +40,8 @@ INSTALLED_APPS = [
     'rest_framework',
     'rest_framework_swagger',
     'Fornecedores.apps.FornecedoresConfig',
-    'Promocoes.apps.PromocoesConfig'
+    'Promocoes.apps.PromocoesConfig',
+    'Aprovadores.apps.AprovadoresConfig'
 ]
 
 MIDDLEWARE = [
