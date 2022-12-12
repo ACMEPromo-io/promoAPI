@@ -27,11 +27,11 @@ Instala dependências necessárias
 '''pip install -r requirements.txt'''
 
 Inicia o servidor
-'''python manage.py runserver'''
+`python manage.py runserver`
 
 Inicia o worker do celery (ficará disponivel para receber novas tasks e processá-las)
-'''celery -A promoAPI worker -l info -P gevent'''
+`celery -A promoAPI worker -l info -P gevent`
 
-Após isso acesse '''http://localhost:8000/''' para visualizar os endpoints disponiveis e utilizá-los.
+Após isso acesse `http://localhost:8000/` para visualizar os endpoints disponiveis e utilizá-los.
 
-Caso preferir usar o SWAGGER acesse: '''http://localhost:8000/docs'''
+Caso preferir usar o SWAGGER acesse: `http://localhost:8000/docs`
