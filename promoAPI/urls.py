@@ -6,9 +6,7 @@ from Promocoes.views import PromocoesViewSet
 from Aprovadores.views import AprovadoresViewSet
 from Clientes.views import ClientesViewSet,ClientePromocaoViewSet, CupomViewSet
 from Aprovacoes.views import AprovacoesViewSet
-from rest_framework_swagger.views import get_swagger_view
-
-schema_view = get_swagger_view(title='Promo API')
+from drf_spectacular.views import SpectacularAPIView, SpectacularSwaggerView
 
 router = routers.DefaultRouter()
 router.register(r'fornecedor', FornecedoresViewSet, basename='Fornecedores')
@@ -24,5 +22,13 @@ router.register(r'aprovacoes', AprovacoesViewSet, basename='Aprovações')
 urlpatterns = [
     path('', include(router.urls)),
     path('admin/', admin.site.urls),
-    path('api-auth/', include('rest_framework.urls', namespace='rest_framework'))
+    path('api-auth/', include('rest_framework.urls', namespace='rest_framework')),
+    path("schema/", SpectacularAPIView.as_view(), name="schema"),
+    path(
+        "docs/",
+        SpectacularSwaggerView.as_view(
+            template_name="swagger-ui.html", url_name="schema"
+        ),
+        name="swagger-ui",
+    )
 ]
