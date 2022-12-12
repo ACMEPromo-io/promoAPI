@@ -12,3 +12,17 @@ class ClientePromocao(models.Model):
     idClientePromocao = models.AutoField(primary_key=True)
     idCliente = models.ForeignKey(Clientes, on_delete=models.DO_NOTHING)
     idPromocao = models.ForeignKey(Promocoes, on_delete=models.DO_NOTHING)
+
+class Cupom(models.Model):
+
+    class Status(models.TextChoices):
+        VALIDO = 'Valido', 
+        EXPIRADO = 'Expirado'
+
+    idCupom = models.AutoField(primary_key=True)
+    idPromocao = models.ForeignKey(Promocoes, on_delete=models.DO_NOTHING)
+    idCliente = models.ForeignKey(Clientes, on_delete=models.DO_NOTHING)
+    numeroCupom = models.IntegerField()
+    dataDeCriacao = models.DateField()
+    status = models.CharField(max_length=20, choices=Status.choices, default=Status.VALIDO)
+    sorteado = models.BooleanField()

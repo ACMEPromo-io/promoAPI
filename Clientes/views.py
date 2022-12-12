@@ -2,8 +2,8 @@ from django.http import JsonResponse
 from django.shortcuts import render
 from rest_framework import viewsets
 from rest_framework import permissions
-from Clientes.models import Clientes, ClientePromocao
-from Clientes.serializers import ClientesSerializer, ClientesPromocaoSerializer
+from Clientes.models import Clientes, ClientePromocao, Cupom
+from Clientes.serializers import ClientesSerializer, ClientesPromocaoSerializer, CupomSerializer
 
 # Create your views here.
 class ClientesViewSet(viewsets.ModelViewSet):
@@ -32,3 +32,23 @@ class ClientePromocaoViewSet(viewsets.ModelViewSet):
         clientePromocaoModel_object = self.get_object(pk)
         clientePromocaoModel_object.delete()
         return JsonResponse(code=200, data='')
+
+class CupomViewSet(viewsets.ModelViewSet):
+    serializer_class = CupomSerializer
+    queryset = Cupom.objects.all()
+
+    #def post(self, request):
+        #cupomModel_object = Cupom()
+        #print(request.data)
+        #clienteCadastrado = ClientePromocao.objects.filter(idCliente = request.data.idCliente, idPromocao = request.data.idPromocao)
+       
+        #serializer = CupomSerializer(cupomModel_object, data=request.data, partial=True) # set partial=True to update a data partially
+
+    # including patch
+    def patch(self, request, pk):
+        cupomModel_object = self.get_object(pk)
+        serializer = CupomSerializer(cupomModel_object, data=request.data, partial=True) # set partial=True to update a data partially
+        if serializer.is_valid():
+            serializer.save()
+            return JsonResponse(code=201, data=serializer.data)
+        return JsonResponse(code=400, data="wrong parameters")
