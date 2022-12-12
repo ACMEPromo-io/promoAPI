@@ -4,7 +4,7 @@ from rest_framework import routers
 from Fornecedores.views import FornecedoresViewSet
 from Promocoes.views import PromocoesViewSet
 from Aprovadores.views import AprovadoresViewSet
-from Clientes.views import ClientesViewSet,ClientePromocaoViewSet
+from Clientes.views import ClientesViewSet,ClientePromocaoViewSet, CupomViewSet
 from Aprovacoes.views import AprovacoesViewSet
 from rest_framework_swagger.views import get_swagger_view
 
@@ -16,6 +16,7 @@ router.register(r'promocao', PromocoesViewSet, basename='Promoções')
 router.register(r'aprovador', AprovadoresViewSet, basename='Aprovadores')
 router.register(r'cliente', ClientesViewSet, basename='Clientes')
 router.register(r'clientepromocao', ClientePromocaoViewSet, basename='Clientes/Promoções')
+router.register(r'cupom', CupomViewSet, basename='Cupom')
 router.register(r'aprovacoes', AprovacoesViewSet, basename='Aprovações')
 
 # Wire up our API using automatic URL routing.

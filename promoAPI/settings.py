@@ -39,10 +39,11 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'rest_framework_swagger',
+    'django_extensions',
     'Fornecedores.apps.FornecedoresConfig',
+    'Clientes.apps.ClientesConfig',
     'Promocoes.apps.PromocoesConfig',
     'Aprovadores.apps.AprovadoresConfig',
-    'Clientes.apps.ClientesConfig',
     'Aprovacoes.apps.AprovacoesConfig'
 ]
 

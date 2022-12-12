@@ -17,9 +17,9 @@ class AprovadoresViewSet(viewsets.ModelViewSet):
         if serializer.is_valid():
             serializer.save()
             return JsonResponse(code=201, data=serializer.data)
-        return JsonResponse(code=400, data="wrong parameters")
+        return JsonResponse(data="wrong parameters")
     
     def delete(self, request, pk):
         aprovadorModel_object = self.get_object(pk)
         aprovadorModel_object.delete()
-        return JsonResponse(code=200, data='')
+        return JsonResponse(data='')
